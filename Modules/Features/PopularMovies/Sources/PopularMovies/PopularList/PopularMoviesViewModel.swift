@@ -45,7 +45,7 @@ public class PopularMoviesViewModel: ObservableObject {
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { error in
                 // TODO: handle error
-                print(error)
+                debugPrint(error)
             }, receiveValue: { [weak self] movies in
                 self?.movies = movies
             })
@@ -59,7 +59,7 @@ public class PopularMoviesViewModel: ObservableObject {
             do {
                 try await dependencies.updateMovies()
             } catch (let error) {
-                print(error)
+                debugPrint(error)
                 // TODO: handle error
             }
         }

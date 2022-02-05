@@ -21,7 +21,7 @@ public final class ImageLoader {
 
     public func loadImage(from url: URL) async throws -> UIImage? {
         if let image = cache[url] {
-            print("Image cached for: \(url.absoluteString)")
+            debugPrint("🦸 [cached]: \(url.absoluteString)")
             return image
         }
         let (data, response) = try await session.data(from: url)
