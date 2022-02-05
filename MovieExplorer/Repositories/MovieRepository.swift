@@ -15,10 +15,10 @@ class MovieRepository {
 
     init(movieDBClient: TheMovieDBClient) {
         self.movieDBClient = movieDBClient
-        updatePopularMovies()
     }
 
     func updatePopularMovies() {
+        guard isLoading.value == false else { return }
         isLoading.send(true)
         Task {
             do {

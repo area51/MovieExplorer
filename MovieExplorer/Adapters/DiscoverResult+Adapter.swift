@@ -8,7 +8,7 @@ import TheMovieDBClient
 
 extension DiscoverResult {
     func toMovie() -> Movie {
-        Movie(
+        .init(
             id: self.id,
             title: self.title,
             overview: self.overview,

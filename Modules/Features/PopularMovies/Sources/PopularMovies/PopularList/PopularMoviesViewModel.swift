@@ -13,19 +13,23 @@ public class PopularMoviesViewModel: ObservableObject {
     @Published private(set) var movies: [Movie] = []
     @Published private(set) var isLoading: Bool = false
 
+    public var itemViewModel: (Movie) -> PopularMovieItemViewModel {
+        dependencies.itemViewModel
+    }
+
     public struct Dependencies {
         public var movies : CurrentValueSubject<[Movie], Error>
         public var updateMovies: () async throws -> Void
-        public var loadImage: (URL) async throws -> UIImage?
+        public var itemViewModel: (Movie) -> PopularMovieItemViewModel
 
         public init(
             movies: CurrentValueSubject<[Movie], Error>,
             updateMovies: @escaping () async throws -> Void,
-            loadImage: @escaping (URL) async throws -> UIImage?) {
+            itemViewModel: @escaping (Movie) -> PopularMovieItemViewModel) {
 
                 self.movies = movies
                 self.updateMovies = updateMovies
-                self.loadImage = loadImage
+                self.itemViewModel = itemViewModel
         }
     }
 

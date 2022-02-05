@@ -10,8 +10,7 @@ struct MovieExplorerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            PopularMoviesListViewComposer
-                .compose(diContainer: diContainer)
+            PopularMoviesListViewComposer(diContainer).compose()
         }
     }
 }

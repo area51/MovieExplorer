@@ -3,25 +3,36 @@
 //
 
 import SwiftUI
-import Combine
+import Combine 
 import Domain
 
-@MainActor public final class PopularMovieItemViewModel: ObservableObject {
-    let movie: Movie
-    @Published private(set) var poster: UIImage?
+public final class PopularMovieItemViewModel: ObservableObject {
 
     public struct Dependencies {
-        var loadImage: (URL) async throws -> UIImage?
+        public let movie: Movie
+        public var loadImage: (URL) async throws -> UIImage?
+
+        public init(
+            movie: Movie,
+            loadImage: @escaping (URL) async throws -> UIImage?) {
+
+                self.movie = movie
+                self.loadImage = loadImage
+            }
+    }
+
+    public var movie: Movie {
+        self.dependencies.movie
     }
 
     private let dependencies: Dependencies
+    @Published private(set) var poster: UIImage?
 
-    public init(dependencies: Dependencies, movie: Movie) {
+    public init(dependencies: Dependencies) {
         self.dependencies = dependencies
-        self.movie = movie
     }
 
-    public func loadImage(url: URL) {
+    @MainActor public func loadImage(url: URL) {
         Task {
             self.poster = try? await dependencies.loadImage(url)
         }

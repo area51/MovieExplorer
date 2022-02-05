@@ -32,17 +32,18 @@ public struct PopularMovieItemView: View {
     }
 }
 
+// TODO: Find a better place for this extension
 public extension URL {
     enum MovieDBImageType: String {
-        case thumb = "w440_and_h660_face"
+        case thumb = "/w440_and_h660_face"
     }
 
     static func movieDBImage(
         path: String,
         type: MovieDBImageType = .thumb) -> URL? {
 
-            let baseURL = "https://www.themoviedb.org/t/p/"
-            return URL(string: baseURL + type.rawValue + "/" + path)
+            let baseURL = "https://www.themoviedb.org/t/p"
+            return URL(string: baseURL + type.rawValue + path)
         }
 }
 
@@ -56,10 +57,9 @@ struct PopularMovieItemView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             let viewModel = PopularMovieItemViewModel(
-                dependencies: .init(loadImage: { _ in
+                dependencies: .init(movie: Movie.matrix, loadImage: { _ in
                     UIImage(named: "matrix")
-                }),
-                movie: Movie.matrix)
+                }))
             PopularMovieItemView(viewModel: viewModel)
         }
     }

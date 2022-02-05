@@ -21,11 +21,31 @@ public final class ImageLoader {
 
     public func loadImage(from url: URL) async throws -> UIImage? {
         if let image = cache[url] {
+            print("Image cached for: \(url.absoluteString)")
             return image
         }
-        let (data, _) = try await session.data(from: url)
+        let (data, response) = try await session.data(from: url)
+        if let message = response.logMessage { debugPrint(message) }
         guard let image: UIImage = UIImage(data: data) else { return nil }
         self.cache[url] = image
         return image
+    }
+}
+
+extension URLResponse {
+    var logMessage: String? {
+        guard let response = self as? HTTPURLResponse else { return nil }
+        guard let icon = self.icon,
+              let url = response.url?.absoluteString else { return nil }
+        return "\(icon) [\(response.statusCode)]: \(url)"
+    }
+
+    var icon: String? {
+        guard let response = self as? HTTPURLResponse else { return nil }
+        let successRange = 200...299
+        if successRange.contains(response.statusCode) {
+            return "🧑‍🎨"
+        }
+        return "💣"
     }
 }

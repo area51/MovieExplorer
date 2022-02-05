@@ -11,14 +11,14 @@ import TheMovieDBClient
 class DIContainer {
     lazy var imageLoader = ImageLoader(
         cache: InMemoryImageCache())
+
+    lazy var movieRepository =
+        MovieRepository(movieDBClient: movieDBClient)
 }
 
 // MARK: - App multi instances dependencies
 
 extension DIContainer {
-    var movieRepository: MovieRepository {
-        MovieRepository(movieDBClient: movieDBClient)
-    }
 }
 
 // MARK: - Private Helpers

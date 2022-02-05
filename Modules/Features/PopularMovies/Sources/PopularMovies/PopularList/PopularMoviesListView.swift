@@ -3,7 +3,6 @@
 //
 
 import SwiftUI
-import ImageLoader
 
 public struct PopularMoviesListView: View {
     @ObservedObject private(set) var viewModel: PopularMoviesViewModel
@@ -20,14 +19,8 @@ public struct PopularMoviesListView: View {
                         NavigationLink {
                             MovieDetailView()
                         } label: {
-                            let viewModel = PopularMovieItemViewModel(
-                                dependencies: .init(loadImage: { url in
-                                    let cache = InMemoryImageCache()
-                                    let imageLoader = ImageLoader(cache: cache)
-                                    return try? await imageLoader.loadImage(from: url)
-                                }),
-                                movie: movie)
-                            PopularMovieItemView(viewModel: viewModel)
+                            PopularMovieItemView(
+                                viewModel: viewModel.itemViewModel(movie))
                         }
 
                     }
@@ -53,16 +46,21 @@ import Combine
 
 struct PopularMoviesListView_Previews: PreviewProvider {
     static let repository = FakeMoviesRepository()
-    // TODO: Use a fake image loader
-    static let imageLoader = ImageLoader(cache: InMemoryImageCache())
 
     static let viewModel: PopularMoviesViewModel = {
         typealias Dependencies = PopularMoviesViewModel.Dependencies
 
+        var itemViewModel: (Movie) -> PopularMovieItemViewModel = { movie in
+            PopularMovieItemViewModel(
+                dependencies: .init(movie: movie, loadImage: { _ in
+                    UIImage(named: "matrix")
+                }))
+        }
+
         let dependencies = Dependencies(
             movies: repository.movies,
             updateMovies: {},
-            loadImage: imageLoader.loadImage(from:)
+            itemViewModel: itemViewModel
         )
         return PopularMoviesViewModel(dependencies: dependencies)
     }()
