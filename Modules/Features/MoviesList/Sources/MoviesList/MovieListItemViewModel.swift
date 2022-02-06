@@ -5,7 +5,7 @@
 import SwiftUI
 import Domain
 
-public final class MovieDetailViewModel: ObservableObject {
+public final class MovieListItemViewModel: ObservableObject {
 
     public struct Dependencies {
         public let movie: Movie

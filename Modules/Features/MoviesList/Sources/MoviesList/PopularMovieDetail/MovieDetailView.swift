@@ -8,9 +8,9 @@ import LoadableImage
 
 public struct MovieDetailView: View {
 
-    private let viewModel: MovieDetailViewModel
+    private let viewModel: MovieListItemViewModel
 
-    public init(viewModel: MovieDetailViewModel) {
+    public init(viewModel: MovieListItemViewModel) {
         self.viewModel = viewModel
     }
 
@@ -37,7 +37,7 @@ public struct MovieDetailView: View {
 
 struct MovieDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieDetailView(viewModel: MovieDetailViewModel(.init(
+        MovieDetailView(viewModel: MovieListItemViewModel(.init(
             movie: .matrix,
             loadImageFromPath: { UIImage(named: $0) })))
     }

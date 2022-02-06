@@ -27,14 +27,14 @@ class PopularMoviesListViewComposer {
         return MoviesListView(viewModel: viewModel)
     }
 
-    private func itemViewModel(for movie: Movie) -> MovieDetailViewModel {
+    private func itemViewModel(for movie: Movie) -> MovieListItemViewModel {
 
-        let dependencies = MovieDetailViewModel.Dependencies(
+        let dependencies = MovieListItemViewModel.Dependencies(
             movie: movie,
             loadImageFromPath: { [weak diContainer] path in
                 try? await diContainer?.imageLoader.loadImageFromPath(path)
             })
 
-        return MovieDetailViewModel(dependencies)
+        return MovieListItemViewModel(dependencies)
     }
 }

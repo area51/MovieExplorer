@@ -7,7 +7,7 @@ import LoadableImage
 
 public struct MovieListItemView: View {
 
-    @ObservedObject private(set) var viewModel: MovieDetailViewModel
+    @ObservedObject private(set) var viewModel: MovieListItemViewModel
 
     public var body: some View {
         HStack {
@@ -35,7 +35,7 @@ import PreviewUtils
 struct PopularMovieItemView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            let viewModel = MovieDetailViewModel(.init(
+            let viewModel = MovieListItemViewModel(.init(
                 movie: .matrix,
                 loadImageFromPath: { UIImage(named: $0) }))
             MovieListItemView(viewModel: viewModel)

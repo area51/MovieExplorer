@@ -12,12 +12,12 @@ public class MoviesListViewModel: ObservableObject {
     public struct Dependencies {
         public var movies : CurrentValueSubject<[Movie], Error>
         public var updateMovies: () async throws -> Void
-        public var itemViewModel: (Movie) -> MovieDetailViewModel
+        public var itemViewModel: (Movie) -> MovieListItemViewModel
 
         public init(
             movies: CurrentValueSubject<[Movie], Error>,
             updateMovies: @escaping () async throws -> Void,
-            itemViewModel: @escaping (Movie) -> MovieDetailViewModel) {
+            itemViewModel: @escaping (Movie) -> MovieListItemViewModel) {
 
                 self.movies = movies
                 self.updateMovies = updateMovies
@@ -31,7 +31,7 @@ public class MoviesListViewModel: ObservableObject {
     @Published private(set) var movies: [Movie] = []
     @Published private(set) var isLoading: Bool = false
 
-    public var itemViewModel: (Movie) -> MovieDetailViewModel {
+    public var itemViewModel: (Movie) -> MovieListItemViewModel {
         dependencies.itemViewModel
     }
 

@@ -52,8 +52,8 @@ struct PopularMoviesListView_Previews: PreviewProvider {
     static let viewModel: MoviesListViewModel = {
         typealias Dependencies = MoviesListViewModel.Dependencies
 
-        var itemViewModel: (Movie) -> MovieDetailViewModel = { movie in
-            MovieDetailViewModel(.init(
+        var itemViewModel: (Movie) -> MovieListItemViewModel = { movie in
+            MovieListItemViewModel(.init(
                 movie: movie,
                 loadImageFromPath: { UIImage(named: $0) }))
         }
