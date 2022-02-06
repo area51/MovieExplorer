@@ -10,12 +10,12 @@ import UIKit
 public class MoviesListViewModel: ObservableObject {
 
     public struct Dependencies {
-        public var movies : CurrentValueSubject<[Movie], Error>
+        public var movies : CurrentValueSubject<[Movie], Never>
         public var updateMovies: () async throws -> Void
         public var itemViewModel: (Movie) -> MovieListItemViewModel
 
         public init(
-            movies: CurrentValueSubject<[Movie], Error>,
+            movies: CurrentValueSubject<[Movie], Never>,
             updateMovies: @escaping () async throws -> Void,
             itemViewModel: @escaping (Movie) -> MovieListItemViewModel) {
 
@@ -28,7 +28,7 @@ public class MoviesListViewModel: ObservableObject {
     private let dependencies: Dependencies
     private var cancellable: AnyCancellable?
 
-    @Published private(set) var movies: [Movie] = []
+    @Published private(set) var movies: [Movie] = [Movie.matrix]
     @Published private(set) var isLoading: Bool = false
 
     public var itemViewModel: (Movie) -> MovieListItemViewModel {
@@ -43,12 +43,11 @@ public class MoviesListViewModel: ObservableObject {
         cancellable = dependencies
             .movies
             .receive(on: RunLoop.main)
-            .sink(receiveCompletion: { error in
-                // TODO: handle error
-                debugPrint(error)
-            }, receiveValue: { [weak self] movies in
+            .sink(receiveValue: { [weak self] movies in
                 self?.movies = movies
+                debugPrint("received movies: \(movies.count)")
             })
+        // TODO: handle error
 
         updateMovies()
     }

@@ -6,30 +6,66 @@ import Foundation
 import Combine
 import Domain
 import TheMovieDBClient
+import LocalPersistence
 
 class MovieRepository {
     private let movieDBClient: TheMovieDBClient
-    private var cancellable: AnyCancellable?
-    private(set) var movies : CurrentValueSubject<[Movie], Error> = .init([])
-    private(set) var isLoading: CurrentValueSubject<Bool, Never> = .init(false)
+    private let persistencyController: LocalPersistenceController
 
-    init(movieDBClient: TheMovieDBClient) {
+    private(set) var movies : CurrentValueSubject<[Movie], Never> = .init([])
+    private(set) var isLoading: CurrentValueSubject<Bool, Never> = .init(false)
+    private(set) var loadingError: CurrentValueSubject<Error?, Never> = .init(nil)
+
+    private var cancellable: AnyCancellable?
+
+    init(
+        movieDBClient: TheMovieDBClient,
+        persistenceController: LocalPersistenceController
+    ) {
+
         self.movieDBClient = movieDBClient
+        self.persistencyController = persistenceController
     }
 
     func updatePopularMovies() {
+//        if movies.value.isEmpty {
+//            let cached = fetchPopularMoviesFromCache()
+//            debugPrint("Recovered \(cached.count) movies from cache")
+//            self.movies.send(cached)
+//        }
+
         guard isLoading.value == false else { return }
-        isLoading.send(true)
         Task {
             do {
-                let response: DiscoverResponseDTO =
-                    try await movieDBClient.getPopularMovies()
-                let movies = response.results.map { $0.toMovie() }
+                let movies = try await fetchPopularMoviesFromNetwork()
+                debugPrint("Recovered \(movies.count) movies from network")
+//                if movies.count > 0 {
+//                    try? cacheMovies(movies)
+//                }
                 self.movies.send(movies)
             } catch (let error) {
-                self.movies.send(completion: .failure(error))
+                self.loadingError.send(error)
             }
         }
-        isLoading.send(false)
+    }
+
+    private func fetchPopularMoviesFromCache() -> [Movie] {
+        let cached = try? persistencyController.fetchAllMovies()
+        return cached ?? []
+    }
+
+    private func fetchPopularMoviesFromNetwork() async throws -> [Movie] {
+        defer { isLoading.send(false) }
+        isLoading.send(true)
+
+        return try await movieDBClient
+            .getPopularMovies()
+            .results
+            .map { $0.toMovie() }
+    }
+
+    private func cacheMovies(_ movies: [Movie]) throws {
+        try persistencyController.persist(movies)
+        persistencyController.saveContext()
     }
 }

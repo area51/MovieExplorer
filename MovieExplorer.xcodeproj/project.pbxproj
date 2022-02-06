@@ -18,6 +18,7 @@
 		80CD78F827AFC41200D70160 /* MoviesList in Frameworks */ = {isa = PBXBuildFile; productRef = 80CD78F727AFC41200D70160 /* MoviesList */; };
 		80CD78FA27AFC41D00D70160 /* ImageLoader in Frameworks */ = {isa = PBXBuildFile; productRef = 80CD78F927AFC41D00D70160 /* ImageLoader */; };
 		80CD78FC27AFC42700D70160 /* TheMovieDBClient in Frameworks */ = {isa = PBXBuildFile; productRef = 80CD78FB27AFC42700D70160 /* TheMovieDBClient */; };
+		80DF26B127B01B1600092CF0 /* LocalPersistence in Frameworks */ = {isa = PBXBuildFile; productRef = 80DF26B027B01B1600092CF0 /* LocalPersistence */; };
 		80F55D3C27AC7A3D001996E5 /* MovieExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F55D3B27AC7A3D001996E5 /* MovieExplorerApp.swift */; };
 		80F55D4027AC7A3E001996E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80F55D3F27AC7A3E001996E5 /* Assets.xcassets */; };
 		80F55D4327AC7A3E001996E5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80F55D4227AC7A3E001996E5 /* Preview Assets.xcassets */; };
@@ -80,6 +81,7 @@
 				80CD78FA27AFC41D00D70160 /* ImageLoader in Frameworks */,
 				80CD78F427AFC40300D70160 /* LoadableImage in Frameworks */,
 				80CD78F827AFC41200D70160 /* MoviesList in Frameworks */,
+				80DF26B127B01B1600092CF0 /* LocalPersistence in Frameworks */,
 				80CD78FC27AFC42700D70160 /* TheMovieDBClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,11 +225,11 @@
 		80F55D6527AC7AB0001996E5 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				80CD78FF27AFD66E00D70160 /* Persistence */,
 				80CD78E327AFC3DC00D70160 /* DesignSystem */,
 				80CD78E727AFC3DC00D70160 /* Domain */,
 				80CD78E527AFC3DC00D70160 /* Features */,
 				80CD78E927AFC3DC00D70160 /* Network */,
+				80CD78FF27AFD66E00D70160 /* Persistence */,
 				80CD78FD27AFC5EE00D70160 /* Preview */,
 			);
 			path = Modules;
@@ -294,6 +296,7 @@
 				80CD78F727AFC41200D70160 /* MoviesList */,
 				80CD78F927AFC41D00D70160 /* ImageLoader */,
 				80CD78FB27AFC42700D70160 /* TheMovieDBClient */,
+				80DF26B027B01B1600092CF0 /* LocalPersistence */,
 			);
 			productName = MovieExplorer;
 			productReference = 80F55D3827AC7A3D001996E5 /* MovieExplorer.app */;
@@ -767,6 +770,10 @@
 		80CD78FB27AFC42700D70160 /* TheMovieDBClient */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TheMovieDBClient;
+		};
+		80DF26B027B01B1600092CF0 /* LocalPersistence */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LocalPersistence;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

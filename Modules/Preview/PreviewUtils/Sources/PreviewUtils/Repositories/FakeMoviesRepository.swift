@@ -7,7 +7,7 @@ import Combine
 
 public final class FakeMoviesRepository  {
     public var isLoading: CurrentValueSubject<Bool, Never> = .init(false)
-    public var movies : CurrentValueSubject<[Movie], Error> = .init([
+    public var movies : CurrentValueSubject<[Movie], Never> = .init([
         .alien,
         .fightclub,
         .matrix,
@@ -16,7 +16,7 @@ public final class FakeMoviesRepository  {
 
     public init(
         isLoading: CurrentValueSubject<Bool, Never> = .init(false),
-        movies: CurrentValueSubject<[Movie], Error> = .init([.alien, .fightclub, .matrix, . truman])) {
+        movies: CurrentValueSubject<[Movie], Never> = .init([.alien, .fightclub, .matrix, . truman])) {
 
             self.isLoading = isLoading
             self.movies = movies
