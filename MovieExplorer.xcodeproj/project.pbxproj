@@ -7,18 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		80CD78D227AEF6E600D70160 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 80CD78D127AEF6E600D70160 /* Domain */; };
-		80CD78D627AEF6FD00D70160 /* PopularMovies in Frameworks */ = {isa = PBXBuildFile; productRef = 80CD78D527AEF6FD00D70160 /* PopularMovies */; };
-		80CD78D827AEF70500D70160 /* ImageLoader in Frameworks */ = {isa = PBXBuildFile; productRef = 80CD78D727AEF70500D70160 /* ImageLoader */; };
-		80CD78DA27AEF72900D70160 /* TheMovieDBClient in Frameworks */ = {isa = PBXBuildFile; productRef = 80CD78D927AEF72900D70160 /* TheMovieDBClient */; };
-		80CD78DF27AF3C9200D70160 /* LoadableImage in Frameworks */ = {isa = PBXBuildFile; productRef = 80CD78DE27AF3C9200D70160 /* LoadableImage */; };
+		80CD78ED27AFC3DC00D70160 /* LoadableImage in Resources */ = {isa = PBXBuildFile; fileRef = 80CD78E427AFC3DC00D70160 /* LoadableImage */; };
+		80CD78EE27AFC3DC00D70160 /* MoviesList in Resources */ = {isa = PBXBuildFile; fileRef = 80CD78E627AFC3DC00D70160 /* MoviesList */; };
+		80CD78EF27AFC3DC00D70160 /* Domain in Resources */ = {isa = PBXBuildFile; fileRef = 80CD78E827AFC3DC00D70160 /* Domain */; };
+		80CD78F027AFC3DC00D70160 /* TheMovieDBClient in Resources */ = {isa = PBXBuildFile; fileRef = 80CD78EA27AFC3DC00D70160 /* TheMovieDBClient */; };
+		80CD78F127AFC3DC00D70160 /* HTTPClient in Resources */ = {isa = PBXBuildFile; fileRef = 80CD78EB27AFC3DC00D70160 /* HTTPClient */; };
+		80CD78F227AFC3DC00D70160 /* ImageLoader in Resources */ = {isa = PBXBuildFile; fileRef = 80CD78EC27AFC3DC00D70160 /* ImageLoader */; };
+		80CD78F427AFC40300D70160 /* LoadableImage in Frameworks */ = {isa = PBXBuildFile; productRef = 80CD78F327AFC40300D70160 /* LoadableImage */; };
+		80CD78F627AFC40900D70160 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 80CD78F527AFC40900D70160 /* Domain */; };
+		80CD78F827AFC41200D70160 /* MoviesList in Frameworks */ = {isa = PBXBuildFile; productRef = 80CD78F727AFC41200D70160 /* MoviesList */; };
+		80CD78FA27AFC41D00D70160 /* ImageLoader in Frameworks */ = {isa = PBXBuildFile; productRef = 80CD78F927AFC41D00D70160 /* ImageLoader */; };
+		80CD78FC27AFC42700D70160 /* TheMovieDBClient in Frameworks */ = {isa = PBXBuildFile; productRef = 80CD78FB27AFC42700D70160 /* TheMovieDBClient */; };
 		80F55D3C27AC7A3D001996E5 /* MovieExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F55D3B27AC7A3D001996E5 /* MovieExplorerApp.swift */; };
 		80F55D4027AC7A3E001996E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80F55D3F27AC7A3E001996E5 /* Assets.xcassets */; };
 		80F55D4327AC7A3E001996E5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80F55D4227AC7A3E001996E5 /* Preview Assets.xcassets */; };
 		80F55D4D27AC7A3E001996E5 /* MovieExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F55D4C27AC7A3E001996E5 /* MovieExplorerTests.swift */; };
 		80F55D5727AC7A3E001996E5 /* MovieExplorerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F55D5627AC7A3E001996E5 /* MovieExplorerUITests.swift */; };
 		80F55D5927AC7A3E001996E5 /* MovieExplorerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F55D5827AC7A3E001996E5 /* MovieExplorerUITestsLaunchTests.swift */; };
-		80F55D6827AC7AB0001996E5 /* HTTPClient in Resources */ = {isa = PBXBuildFile; fileRef = 80F55D6627AC7AB0001996E5 /* HTTPClient */; };
 		80F55D7227AC7ED5001996E5 /* MovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F55D7127AC7ED5001996E5 /* MovieRepository.swift */; };
 		80F55D7527AC808C001996E5 /* DiscoverResult+Adapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F55D7427AC808C001996E5 /* DiscoverResult+Adapter.swift */; };
 		80F55D8427AD1E37001996E5 /* PopularMoviesListViewComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F55D8327AD1E37001996E5 /* PopularMoviesListViewComposer.swift */; };
@@ -43,7 +48,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		80CD78DD27AF3C0C00D70160 /* LoadableImage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LoadableImage; sourceTree = "<group>"; };
+		80CD78E427AFC3DC00D70160 /* LoadableImage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LoadableImage; sourceTree = "<group>"; };
+		80CD78E627AFC3DC00D70160 /* MoviesList */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = MoviesList; sourceTree = "<group>"; };
+		80CD78E827AFC3DC00D70160 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
+		80CD78EA27AFC3DC00D70160 /* TheMovieDBClient */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TheMovieDBClient; sourceTree = "<group>"; };
+		80CD78EB27AFC3DC00D70160 /* HTTPClient */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = HTTPClient; sourceTree = "<group>"; };
+		80CD78EC27AFC3DC00D70160 /* ImageLoader */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ImageLoader; sourceTree = "<group>"; };
 		80F55D3827AC7A3D001996E5 /* MovieExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80F55D3B27AC7A3D001996E5 /* MovieExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieExplorerApp.swift; sourceTree = "<group>"; };
 		80F55D3F27AC7A3E001996E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,15 +63,10 @@
 		80F55D5227AC7A3E001996E5 /* MovieExplorerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieExplorerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80F55D5627AC7A3E001996E5 /* MovieExplorerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieExplorerUITests.swift; sourceTree = "<group>"; };
 		80F55D5827AC7A3E001996E5 /* MovieExplorerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieExplorerUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		80F55D6627AC7AB0001996E5 /* HTTPClient */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = HTTPClient; sourceTree = "<group>"; };
 		80F55D7127AC7ED5001996E5 /* MovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepository.swift; sourceTree = "<group>"; };
 		80F55D7427AC808C001996E5 /* DiscoverResult+Adapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiscoverResult+Adapter.swift"; sourceTree = "<group>"; };
 		80F55D8327AD1E37001996E5 /* PopularMoviesListViewComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesListViewComposer.swift; sourceTree = "<group>"; };
 		80F55D8527AD1E53001996E5 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
-		80F55DF427AEA70D001996E5 /* ImageLoader */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ImageLoader; sourceTree = "<group>"; };
-		80F55DF627AEA750001996E5 /* TheMovieDBClient */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TheMovieDBClient; sourceTree = "<group>"; };
-		80F55DFC27AEC8C0001996E5 /* PopularMovies */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = PopularMovies; sourceTree = "<group>"; };
-		80F55DFF27AECB6D001996E5 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,11 +74,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80CD78D227AEF6E600D70160 /* Domain in Frameworks */,
-				80CD78D827AEF70500D70160 /* ImageLoader in Frameworks */,
-				80CD78D627AEF6FD00D70160 /* PopularMovies in Frameworks */,
-				80CD78DF27AF3C9200D70160 /* LoadableImage in Frameworks */,
-				80CD78DA27AEF72900D70160 /* TheMovieDBClient in Frameworks */,
+				80CD78F627AFC40900D70160 /* Domain in Frameworks */,
+				80CD78FA27AFC41D00D70160 /* ImageLoader in Frameworks */,
+				80CD78F427AFC40300D70160 /* LoadableImage in Frameworks */,
+				80CD78F827AFC41200D70160 /* MoviesList in Frameworks */,
+				80CD78FC27AFC42700D70160 /* TheMovieDBClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,32 +108,6 @@
 			path = zSupportingFiles;
 			sourceTree = "<group>";
 		};
-		80CD78CE27AEF68400D70160 /* Features */ = {
-			isa = PBXGroup;
-			children = (
-				80F55DFC27AEC8C0001996E5 /* PopularMovies */,
-			);
-			path = Features;
-			sourceTree = "<group>";
-		};
-		80CD78CF27AEF69900D70160 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				80F55D6627AC7AB0001996E5 /* HTTPClient */,
-				80F55DF427AEA70D001996E5 /* ImageLoader */,
-				80F55DF627AEA750001996E5 /* TheMovieDBClient */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		80CD78D027AEF6AD00D70160 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				80F55DFF27AECB6D001996E5 /* Domain */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
 		80CD78DB27AF153F00D70160 /* DependencyInjection */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,12 +116,38 @@
 			path = DependencyInjection;
 			sourceTree = "<group>";
 		};
-		80CD78DC27AF3BEA00D70160 /* DesignSystem */ = {
+		80CD78E327AFC3DC00D70160 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
-				80CD78DD27AF3C0C00D70160 /* LoadableImage */,
+				80CD78E427AFC3DC00D70160 /* LoadableImage */,
 			);
 			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		80CD78E527AFC3DC00D70160 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				80CD78E627AFC3DC00D70160 /* MoviesList */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		80CD78E727AFC3DC00D70160 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				80CD78E827AFC3DC00D70160 /* Domain */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		80CD78E927AFC3DC00D70160 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				80CD78EA27AFC3DC00D70160 /* TheMovieDBClient */,
+				80CD78EB27AFC3DC00D70160 /* HTTPClient */,
+				80CD78EC27AFC3DC00D70160 /* ImageLoader */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		80F55D2F27AC7A3D001996E5 = {
@@ -200,10 +205,10 @@
 		80F55D6527AC7AB0001996E5 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				80CD78DC27AF3BEA00D70160 /* DesignSystem */,
-				80CD78D027AEF6AD00D70160 /* Domain */,
-				80CD78CE27AEF68400D70160 /* Features */,
-				80CD78CF27AEF69900D70160 /* Network */,
+				80CD78E327AFC3DC00D70160 /* DesignSystem */,
+				80CD78E727AFC3DC00D70160 /* Domain */,
+				80CD78E527AFC3DC00D70160 /* Features */,
+				80CD78E927AFC3DC00D70160 /* Network */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -264,11 +269,11 @@
 			);
 			name = MovieExplorer;
 			packageProductDependencies = (
-				80CD78D127AEF6E600D70160 /* Domain */,
-				80CD78D527AEF6FD00D70160 /* PopularMovies */,
-				80CD78D727AEF70500D70160 /* ImageLoader */,
-				80CD78D927AEF72900D70160 /* TheMovieDBClient */,
-				80CD78DE27AF3C9200D70160 /* LoadableImage */,
+				80CD78F327AFC40300D70160 /* LoadableImage */,
+				80CD78F527AFC40900D70160 /* Domain */,
+				80CD78F727AFC41200D70160 /* MoviesList */,
+				80CD78F927AFC41D00D70160 /* ImageLoader */,
+				80CD78FB27AFC42700D70160 /* TheMovieDBClient */,
 			);
 			productName = MovieExplorer;
 			productReference = 80F55D3827AC7A3D001996E5 /* MovieExplorer.app */;
@@ -358,9 +363,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80CD78F027AFC3DC00D70160 /* TheMovieDBClient in Resources */,
+				80CD78EF27AFC3DC00D70160 /* Domain in Resources */,
+				80CD78ED27AFC3DC00D70160 /* LoadableImage in Resources */,
+				80CD78EE27AFC3DC00D70160 /* MoviesList in Resources */,
+				80CD78F127AFC3DC00D70160 /* HTTPClient in Resources */,
+				80CD78F227AFC3DC00D70160 /* ImageLoader in Resources */,
 				80F55D4327AC7A3E001996E5 /* Preview Assets.xcassets in Resources */,
 				80F55D4027AC7A3E001996E5 /* Assets.xcassets in Resources */,
-				80F55D6827AC7AB0001996E5 /* HTTPClient in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,25 +728,25 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		80CD78D127AEF6E600D70160 /* Domain */ = {
+		80CD78F327AFC40300D70160 /* LoadableImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LoadableImage;
+		};
+		80CD78F527AFC40900D70160 /* Domain */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Domain;
 		};
-		80CD78D527AEF6FD00D70160 /* PopularMovies */ = {
+		80CD78F727AFC41200D70160 /* MoviesList */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = PopularMovies;
+			productName = MoviesList;
 		};
-		80CD78D727AEF70500D70160 /* ImageLoader */ = {
+		80CD78F927AFC41D00D70160 /* ImageLoader */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ImageLoader;
 		};
-		80CD78D927AEF72900D70160 /* TheMovieDBClient */ = {
+		80CD78FB27AFC42700D70160 /* TheMovieDBClient */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TheMovieDBClient;
-		};
-		80CD78DE27AF3C9200D70160 /* LoadableImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = LoadableImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

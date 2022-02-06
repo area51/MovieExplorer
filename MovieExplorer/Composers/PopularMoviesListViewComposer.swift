@@ -4,7 +4,7 @@
 
 import Foundation
 import Domain
-import PopularMovies
+import MoviesList
 
 class PopularMoviesListViewComposer {
     let diContainer: DIContainer

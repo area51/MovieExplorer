@@ -4,12 +4,12 @@
 import PackageDescription
 
 let package = Package(
-    name: "PopularMovies",
+    name: "MoviesList",
     platforms: [.iOS(.v15), .macOS(.v11)],
     products: [
         .library(
-            name: "PopularMovies",
-            targets: ["PopularMovies"]),
+            name: "MoviesList",
+            targets: ["MoviesList"]),
     ],
     dependencies: [
         .package(path: "../Domain"),
@@ -17,10 +17,10 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "PopularMovies",
+            name: "MoviesList",
             dependencies: ["Domain", "LoadableImage"]),
         .testTarget(
-            name: "PopularMoviesTests",
-            dependencies: ["PopularMovies"]),
+            name: "MoviesListTests",
+            dependencies: ["MoviesList"]),
     ]
 )
