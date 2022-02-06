@@ -20,7 +20,7 @@ public struct PopularMoviesListView: View {
                             MovieDetailView(
                                 viewModel: viewModel.itemViewModel(movie))
                         } label: {
-                            PopularMovieItemView(
+                            MovieListItemView(
                                 viewModel: viewModel.itemViewModel(movie))
                         }
                     }

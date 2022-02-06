@@ -5,7 +5,7 @@
 import SwiftUI
 import LoadableImage
 
-public struct PopularMovieItemView: View {
+public struct MovieListItemView: View {
 
     @ObservedObject private(set) var viewModel: MovieDetailViewModel
 
@@ -37,7 +37,7 @@ struct PopularMovieItemView_Previews: PreviewProvider {
             let viewModel = MovieDetailViewModel(.init(
                 movie: .matrix,
                 loadImageFromPath: { UIImage(named: $0) }))
-            PopularMovieItemView(viewModel: viewModel)
+            MovieListItemView(viewModel: viewModel)
         }
     }
 }
