@@ -5,9 +5,9 @@
 import SwiftUI
 
 public struct MoviesListView: View {
-    @ObservedObject private(set) var viewModel: PopularMoviesViewModel
+    @ObservedObject private(set) var viewModel: MoviesListViewModel
 
-    public init(viewModel: PopularMoviesViewModel) {
+    public init(viewModel: MoviesListViewModel) {
         self.viewModel = viewModel
     }
 
@@ -48,8 +48,8 @@ import Combine
 struct PopularMoviesListView_Previews: PreviewProvider {
     static let repository = FakeMoviesRepository()
 
-    static let viewModel: PopularMoviesViewModel = {
-        typealias Dependencies = PopularMoviesViewModel.Dependencies
+    static let viewModel: MoviesListViewModel = {
+        typealias Dependencies = MoviesListViewModel.Dependencies
 
         var itemViewModel: (Movie) -> MovieDetailViewModel = { movie in
             MovieDetailViewModel(.init(
@@ -62,7 +62,7 @@ struct PopularMoviesListView_Previews: PreviewProvider {
             updateMovies: {},
             itemViewModel: itemViewModel
         )
-        return PopularMoviesViewModel(dependencies)
+        return MoviesListViewModel(dependencies)
     }()
 
     static var previews: some View {

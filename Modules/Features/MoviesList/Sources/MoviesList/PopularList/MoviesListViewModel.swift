@@ -7,7 +7,7 @@ import Combine
 import Domain
 import UIKit
 
-public class PopularMoviesViewModel: ObservableObject {
+public class MoviesListViewModel: ObservableObject {
 
     public struct Dependencies {
         public var movies : CurrentValueSubject<[Movie], Error>

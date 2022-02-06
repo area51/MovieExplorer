@@ -14,7 +14,7 @@ class PopularMoviesListViewComposer {
     }
 
     func compose() -> MoviesListView {
-        typealias Dependencies = PopularMoviesViewModel.Dependencies
+        typealias Dependencies = MoviesListViewModel.Dependencies
 
         let di = diContainer
 
@@ -23,7 +23,7 @@ class PopularMoviesListViewComposer {
             updateMovies: di.movieRepository.updatePopularMovies,
             itemViewModel: itemViewModel(for:))
 
-        let viewModel = PopularMoviesViewModel(dependencies)
+        let viewModel = MoviesListViewModel(dependencies)
         return MoviesListView(viewModel: viewModel)
     }
 
