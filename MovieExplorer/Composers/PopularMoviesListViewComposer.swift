@@ -13,7 +13,7 @@ class PopularMoviesListViewComposer {
         self.diContainer = diContainer
     }
 
-    func compose() -> PopularMoviesListView {
+    func compose() -> MoviesListView {
         typealias Dependencies = PopularMoviesViewModel.Dependencies
 
         let di = diContainer
@@ -24,7 +24,7 @@ class PopularMoviesListViewComposer {
             itemViewModel: itemViewModel(for:))
 
         let viewModel = PopularMoviesViewModel(dependencies)
-        return PopularMoviesListView(viewModel: viewModel)
+        return MoviesListView(viewModel: viewModel)
     }
 
     private func itemViewModel(for movie: Movie) -> MovieDetailViewModel {

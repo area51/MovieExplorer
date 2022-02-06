@@ -4,7 +4,7 @@
 
 import SwiftUI
 
-public struct PopularMoviesListView: View {
+public struct MoviesListView: View {
     @ObservedObject private(set) var viewModel: PopularMoviesViewModel
 
     public init(viewModel: PopularMoviesViewModel) {
@@ -67,7 +67,7 @@ struct PopularMoviesListView_Previews: PreviewProvider {
 
     static var previews: some View {
         Group {
-            PopularMoviesListView(viewModel: viewModel)
+            MoviesListView(viewModel: viewModel)
         }
     }
 }
