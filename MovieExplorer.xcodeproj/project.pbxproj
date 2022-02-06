@@ -55,6 +55,7 @@
 		80CD78EB27AFC3DC00D70160 /* HTTPClient */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = HTTPClient; sourceTree = "<group>"; };
 		80CD78EC27AFC3DC00D70160 /* ImageLoader */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ImageLoader; sourceTree = "<group>"; };
 		80CD78FE27AFC61800D70160 /* PreviewUtils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = PreviewUtils; sourceTree = "<group>"; };
+		80CD790827AFDB1700D70160 /* LocalPersistence */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LocalPersistence; sourceTree = "<group>"; };
 		80F55D3827AC7A3D001996E5 /* MovieExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80F55D3B27AC7A3D001996E5 /* MovieExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieExplorerApp.swift; sourceTree = "<group>"; };
 		80F55D3F27AC7A3E001996E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -159,6 +160,14 @@
 			path = Preview;
 			sourceTree = "<group>";
 		};
+		80CD78FF27AFD66E00D70160 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				80CD790827AFDB1700D70160 /* LocalPersistence */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		80F55D2F27AC7A3D001996E5 = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +223,7 @@
 		80F55D6527AC7AB0001996E5 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				80CD78FF27AFD66E00D70160 /* Persistence */,
 				80CD78E327AFC3DC00D70160 /* DesignSystem */,
 				80CD78E727AFC3DC00D70160 /* Domain */,
 				80CD78E527AFC3DC00D70160 /* Features */,
