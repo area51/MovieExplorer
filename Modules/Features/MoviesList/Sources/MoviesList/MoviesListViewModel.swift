@@ -26,7 +26,7 @@ public class MoviesListViewModel: ObservableObject {
     }
 
     private let dependencies: Dependencies
-    private var cancellable: AnyCancellable?
+    private var cancellables: [AnyCancellable] = []
 
     @Published private(set) var movies: [Movie] = [Movie.matrix]
     @Published private(set) var isLoading: Bool = false
@@ -37,17 +37,23 @@ public class MoviesListViewModel: ObservableObject {
 
     public init(_ dependencies: Dependencies) {
         self.dependencies = dependencies
+        dependencies
+            .movies
+            .receive(on: RunLoop.main)
+            .assign(to: \.movies, on: self)
+            .store(in: &cancellables)
+        // TODO: handle error
+
     }
 
     @MainActor func onAppear() {
-        cancellable = dependencies
-            .movies
-            .receive(on: RunLoop.main)
-            .sink(receiveValue: { [weak self] movies in
-                self?.movies = movies
-                debugPrint("received movies: \(movies.count)")
-            })
-        // TODO: handle error
+//        cancellable = dependencies
+//            .movies
+//            .receive(on: RunLoop.main)
+//            .sink(receiveValue: { [weak self] movies in
+//                self?.movies = movies
+//                debugPrint("received movies: \(movies.count)")
+//            })
 
         updateMovies()
     }
@@ -66,6 +72,6 @@ public class MoviesListViewModel: ObservableObject {
     }
 
     func onDisappear() {
-        cancellable?.cancel()
+        cancellables.forEach { $0.cancel() }
     }
 }
