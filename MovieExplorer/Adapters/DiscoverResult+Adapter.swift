@@ -11,7 +11,7 @@ extension DiscoverResult {
 
         let posterFullPath: String? = {
             guard let path = self.posterPath else { return nil }
-            return URL.movieDBImage(path: path, type: .thumb)?.absoluteString
+            return URL.movieDBImage(path: path, type: .w500)?.absoluteString
         }()
 
         let backdropFullPath: String? = {
@@ -34,7 +34,7 @@ extension DiscoverResult {
 
 private extension URL {
     enum MovieDBImageType: String {
-        case thumb = "/w440_and_h660_face"
+        case w500 = "/w500"
         case original = "/original"
     }
 
@@ -42,7 +42,7 @@ private extension URL {
         path: String,
         type: MovieDBImageType) -> URL? {
 
-            let baseURL = "https://www.themoviedb.org/t/p"
+            let baseURL = "https://image.tmdb.org/t/p"
             return URL(string: baseURL + type.rawValue + path)
         }
 }
