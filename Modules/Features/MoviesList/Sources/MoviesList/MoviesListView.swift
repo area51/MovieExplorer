@@ -44,6 +44,7 @@ public struct MoviesListView: View {
 #if DEBUG
 import Domain
 import Combine
+import PreviewUtils
 
 struct PopularMoviesListView_Previews: PreviewProvider {
     static let repository = FakeMoviesRepository()
@@ -71,15 +72,4 @@ struct PopularMoviesListView_Previews: PreviewProvider {
         }
     }
 }
-
-class FakeMoviesRepository  {
-    var isLoading: CurrentValueSubject<Bool, Never> = .init(false)
-    var movies : CurrentValueSubject<[Movie], Error> = .init([
-        Movie.alien,
-        Movie.fightclub,
-        Movie.matrix,
-        Movie.truman
-    ])
-}
-
 #endif

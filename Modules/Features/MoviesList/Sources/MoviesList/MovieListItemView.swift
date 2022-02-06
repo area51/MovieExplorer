@@ -30,6 +30,7 @@ public struct MovieListItemView: View {
 
 #if DEBUG
 import Domain
+import PreviewUtils
 
 struct PopularMovieItemView_Previews: PreviewProvider {
     static var previews: some View {
