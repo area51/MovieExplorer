@@ -14,16 +14,17 @@ public struct PopularMoviesListView: View {
     public var body: some View {
         NavigationView {
             ScrollView {
-                LazyVStack(alignment: .leading) {
+                LazyVStack {
                     ForEach(viewModel.movies) { movie in
                         NavigationLink {
-                            MovieDetailView()
+                            MovieDetailView(
+                                viewModel: viewModel.itemViewModel(movie))
                         } label: {
                             PopularMovieItemView(
                                 viewModel: viewModel.itemViewModel(movie))
                         }
-
                     }
+                    Spacer()
                 }
                 .padding()
             }
@@ -50,11 +51,10 @@ struct PopularMoviesListView_Previews: PreviewProvider {
     static let viewModel: PopularMoviesViewModel = {
         typealias Dependencies = PopularMoviesViewModel.Dependencies
 
-        var itemViewModel: (Movie) -> PopularMovieItemViewModel = { movie in
-            PopularMovieItemViewModel(
-                dependencies: .init(movie: movie, loadImage: { _ in
-                    UIImage(named: "matrix")
-                }))
+        var itemViewModel: (Movie) -> MovieDetailViewModel = { movie in
+            MovieDetailViewModel(.init(
+                movie: movie,
+                loadImageFromPath: { UIImage(named: $0) }))
         }
 
         let dependencies = Dependencies(
@@ -62,7 +62,7 @@ struct PopularMoviesListView_Previews: PreviewProvider {
             updateMovies: {},
             itemViewModel: itemViewModel
         )
-        return PopularMoviesViewModel(dependencies: dependencies)
+        return PopularMoviesViewModel(dependencies)
     }()
 
     static var previews: some View {
@@ -75,10 +75,10 @@ struct PopularMoviesListView_Previews: PreviewProvider {
 class FakeMoviesRepository  {
     var isLoading: CurrentValueSubject<Bool, Never> = .init(false)
     var movies : CurrentValueSubject<[Movie], Error> = .init([
-        Movie.fake(id: 1, title: "Alien (1979)"),
-        Movie.fake(id: 2, title: "Fight Club"),
-        Movie.fake(id: 3, title: "The Matrix"),
-        Movie.fake(id: 4, title: "The Truman Show")
+        Movie.alien,
+        Movie.fightclub,
+        Movie.matrix,
+        Movie.truman
     ])
 }
 

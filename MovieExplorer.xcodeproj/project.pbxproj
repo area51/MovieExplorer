@@ -11,6 +11,7 @@
 		80CD78D627AEF6FD00D70160 /* PopularMovies in Frameworks */ = {isa = PBXBuildFile; productRef = 80CD78D527AEF6FD00D70160 /* PopularMovies */; };
 		80CD78D827AEF70500D70160 /* ImageLoader in Frameworks */ = {isa = PBXBuildFile; productRef = 80CD78D727AEF70500D70160 /* ImageLoader */; };
 		80CD78DA27AEF72900D70160 /* TheMovieDBClient in Frameworks */ = {isa = PBXBuildFile; productRef = 80CD78D927AEF72900D70160 /* TheMovieDBClient */; };
+		80CD78DF27AF3C9200D70160 /* LoadableImage in Frameworks */ = {isa = PBXBuildFile; productRef = 80CD78DE27AF3C9200D70160 /* LoadableImage */; };
 		80F55D3C27AC7A3D001996E5 /* MovieExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F55D3B27AC7A3D001996E5 /* MovieExplorerApp.swift */; };
 		80F55D4027AC7A3E001996E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80F55D3F27AC7A3E001996E5 /* Assets.xcassets */; };
 		80F55D4327AC7A3E001996E5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80F55D4227AC7A3E001996E5 /* Preview Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		80CD78DD27AF3C0C00D70160 /* LoadableImage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LoadableImage; sourceTree = "<group>"; };
 		80F55D3827AC7A3D001996E5 /* MovieExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80F55D3B27AC7A3D001996E5 /* MovieExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieExplorerApp.swift; sourceTree = "<group>"; };
 		80F55D3F27AC7A3E001996E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				80CD78D227AEF6E600D70160 /* Domain in Frameworks */,
 				80CD78D827AEF70500D70160 /* ImageLoader in Frameworks */,
 				80CD78D627AEF6FD00D70160 /* PopularMovies in Frameworks */,
+				80CD78DF27AF3C9200D70160 /* LoadableImage in Frameworks */,
 				80CD78DA27AEF72900D70160 /* TheMovieDBClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,8 +97,8 @@
 		80CD78CD27AEF63B00D70160 /* zSupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				80F55D4127AC7A3E001996E5 /* Preview Content */,
 				80F55D3F27AC7A3E001996E5 /* Assets.xcassets */,
+				80F55D4227AC7A3E001996E5 /* Preview Assets.xcassets */,
 			);
 			path = zSupportingFiles;
 			sourceTree = "<group>";
@@ -134,6 +137,14 @@
 			path = DependencyInjection;
 			sourceTree = "<group>";
 		};
+		80CD78DC27AF3BEA00D70160 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				80CD78DD27AF3C0C00D70160 /* LoadableImage */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
 		80F55D2F27AC7A3D001996E5 = {
 			isa = PBXGroup;
 			children = (
@@ -169,14 +180,6 @@
 			path = MovieExplorer;
 			sourceTree = "<group>";
 		};
-		80F55D4127AC7A3E001996E5 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				80F55D4227AC7A3E001996E5 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
 		80F55D4B27AC7A3E001996E5 /* MovieExplorerTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +200,7 @@
 		80F55D6527AC7AB0001996E5 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				80CD78DC27AF3BEA00D70160 /* DesignSystem */,
 				80CD78D027AEF6AD00D70160 /* Domain */,
 				80CD78CE27AEF68400D70160 /* Features */,
 				80CD78CF27AEF69900D70160 /* Network */,
@@ -264,6 +268,7 @@
 				80CD78D527AEF6FD00D70160 /* PopularMovies */,
 				80CD78D727AEF70500D70160 /* ImageLoader */,
 				80CD78D927AEF72900D70160 /* TheMovieDBClient */,
+				80CD78DE27AF3C9200D70160 /* LoadableImage */,
 			);
 			productName = MovieExplorer;
 			productReference = 80F55D3827AC7A3D001996E5 /* MovieExplorer.app */;
@@ -544,7 +549,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MovieExplorer/zSupportingFiles/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MovieExplorer/zSupportingFiles";
 				DEVELOPMENT_TEAM = FJKBR6T662;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -573,7 +578,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MovieExplorer/zSupportingFiles/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MovieExplorer/zSupportingFiles";
 				DEVELOPMENT_TEAM = FJKBR6T662;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -728,6 +733,10 @@
 		80CD78D927AEF72900D70160 /* TheMovieDBClient */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TheMovieDBClient;
+		};
+		80CD78DE27AF3C9200D70160 /* LoadableImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LoadableImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

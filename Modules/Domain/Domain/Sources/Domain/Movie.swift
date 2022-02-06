@@ -32,4 +32,9 @@ public struct Movie {
     }
 }
 
+/*
+ Technically this is not the best place for this extension.
+ The alternative would be to have this extension on the Feature that needs it.
+ But that means duplicating this code in every feature of the project.
+*/
 extension Movie: Identifiable {}

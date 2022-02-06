@@ -19,7 +19,8 @@ public final class ImageLoader {
         self.cache = cache
     }
 
-    public func loadImage(from url: URL) async throws -> UIImage? {
+    public func loadImageFromPath(_ path: String) async throws -> UIImage? {
+        guard let url = URL(string: path) else { return nil }
         if let image = cache[url] {
             debugPrint("🦸 [cached]: \(url.absoluteString)")
             return image

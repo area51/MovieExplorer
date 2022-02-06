@@ -23,18 +23,18 @@ class PopularMoviesListViewComposer {
             updateMovies: di.movieRepository.updatePopularMovies,
             itemViewModel: itemViewModel(for:))
 
-        let viewModel = PopularMoviesViewModel(dependencies: dependencies)
+        let viewModel = PopularMoviesViewModel(dependencies)
         return PopularMoviesListView(viewModel: viewModel)
     }
 
-    private func itemViewModel(for movie: Movie) -> PopularMovieItemViewModel {
+    private func itemViewModel(for movie: Movie) -> MovieDetailViewModel {
 
-        let dependencies = PopularMovieItemViewModel.Dependencies(
+        let dependencies = MovieDetailViewModel.Dependencies(
             movie: movie,
-            loadImage: { [weak diContainer] url in
-                try? await diContainer?.imageLoader.loadImage(from: url)
+            loadImageFromPath: { [weak diContainer] path in
+                try? await diContainer?.imageLoader.loadImageFromPath(path)
             })
 
-        return PopularMovieItemViewModel(dependencies: dependencies)
+        return MovieDetailViewModel(dependencies)
     }
 }

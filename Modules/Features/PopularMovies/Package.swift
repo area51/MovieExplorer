@@ -12,12 +12,13 @@ let package = Package(
             targets: ["PopularMovies"]),
     ],
     dependencies: [
-        .package(path: "../Domain")
+        .package(path: "../Domain"),
+        .package(path: "../LoadableImage")
     ],
     targets: [
         .target(
             name: "PopularMovies",
-            dependencies: ["Domain"]),
+            dependencies: ["Domain", "LoadableImage"]),
         .testTarget(
             name: "PopularMoviesTests",
             dependencies: ["PopularMovies"]),

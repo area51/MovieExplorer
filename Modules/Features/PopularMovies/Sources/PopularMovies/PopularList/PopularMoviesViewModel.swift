@@ -8,34 +8,34 @@ import Domain
 import UIKit
 
 public class PopularMoviesViewModel: ObservableObject {
+
+    public struct Dependencies {
+        public var movies : CurrentValueSubject<[Movie], Error>
+        public var updateMovies: () async throws -> Void
+        public var itemViewModel: (Movie) -> MovieDetailViewModel
+
+        public init(
+            movies: CurrentValueSubject<[Movie], Error>,
+            updateMovies: @escaping () async throws -> Void,
+            itemViewModel: @escaping (Movie) -> MovieDetailViewModel) {
+
+                self.movies = movies
+                self.updateMovies = updateMovies
+                self.itemViewModel = itemViewModel
+            }
+    }
+
+    private let dependencies: Dependencies
     private var cancellable: AnyCancellable?
 
     @Published private(set) var movies: [Movie] = []
     @Published private(set) var isLoading: Bool = false
 
-    public var itemViewModel: (Movie) -> PopularMovieItemViewModel {
+    public var itemViewModel: (Movie) -> MovieDetailViewModel {
         dependencies.itemViewModel
     }
 
-    public struct Dependencies {
-        public var movies : CurrentValueSubject<[Movie], Error>
-        public var updateMovies: () async throws -> Void
-        public var itemViewModel: (Movie) -> PopularMovieItemViewModel
-
-        public init(
-            movies: CurrentValueSubject<[Movie], Error>,
-            updateMovies: @escaping () async throws -> Void,
-            itemViewModel: @escaping (Movie) -> PopularMovieItemViewModel) {
-
-                self.movies = movies
-                self.updateMovies = updateMovies
-                self.itemViewModel = itemViewModel
-        }
-    }
-
-    private let dependencies: Dependencies
-
-    public init(dependencies: Dependencies) {
+    public init(_ dependencies: Dependencies) {
         self.dependencies = dependencies
     }
 
