@@ -28,20 +28,11 @@ class MovieRepository {
     }
 
     func updatePopularMovies() {
-//        if movies.value.isEmpty {
-//            let cached = fetchPopularMoviesFromCache()
-//            debugPrint("Recovered \(cached.count) movies from cache")
-//            self.movies.send(cached)
-//        }
-
         guard isLoading.value == false else { return }
         Task {
             do {
                 let movies = try await fetchPopularMoviesFromNetwork()
                 debugPrint("Recovered \(movies.count) movies from network")
-//                if movies.count > 0 {
-//                    try? cacheMovies(movies)
-//                }
                 self.movies.send(movies)
             } catch (let error) {
                 self.loadingError.send(error)

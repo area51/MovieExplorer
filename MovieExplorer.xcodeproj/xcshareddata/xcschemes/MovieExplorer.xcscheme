@@ -30,7 +30,7 @@
       codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
-            skipped = "NO">
+            skipped = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "80F55D4727AC7A3E001996E5"
@@ -40,13 +40,93 @@
             </BuildableReference>
          </TestableReference>
          <TestableReference
-            skipped = "NO">
+            skipped = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "80F55D5127AC7A3E001996E5"
                BuildableName = "MovieExplorerUITests.xctest"
                BlueprintName = "MovieExplorerUITests"
                ReferencedContainer = "container:MovieExplorer.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DomainTests"
+               BuildableName = "DomainTests"
+               BlueprintName = "DomainTests"
+               ReferencedContainer = "container:Modules/Domain/Domain">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "HTTPClientTests"
+               BuildableName = "HTTPClientTests"
+               BlueprintName = "HTTPClientTests"
+               ReferencedContainer = "container:Modules/Network/HTTPClient">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "ImageLoaderTests"
+               BuildableName = "ImageLoaderTests"
+               BlueprintName = "ImageLoaderTests"
+               ReferencedContainer = "container:Modules/Network/ImageLoader">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "LoadableImageTests"
+               BuildableName = "LoadableImageTests"
+               BlueprintName = "LoadableImageTests"
+               ReferencedContainer = "container:Modules/DesignSystem/LoadableImage">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "LocalPersistenceTests"
+               BuildableName = "LocalPersistenceTests"
+               BlueprintName = "LocalPersistenceTests"
+               ReferencedContainer = "container:Modules/Persistence/LocalPersistence">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "MoviesListTests"
+               BuildableName = "MoviesListTests"
+               BlueprintName = "MoviesListTests"
+               ReferencedContainer = "container:Modules/Features/MoviesList">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "PreviewUtilsTests"
+               BuildableName = "PreviewUtilsTests"
+               BlueprintName = "PreviewUtilsTests"
+               ReferencedContainer = "container:Modules/Preview/PreviewUtils">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "TheMovieDBClientTests"
+               BuildableName = "TheMovieDBClientTests"
+               BlueprintName = "TheMovieDBClientTests"
+               ReferencedContainer = "container:Modules/Network/TheMovieDBClient">
             </BuildableReference>
          </TestableReference>
       </Testables>

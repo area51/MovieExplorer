@@ -1,4 +1,5 @@
 import XCTest
+import CoreData
 import Domain
 import PreviewUtils
 @testable import LocalPersistence
@@ -29,21 +30,22 @@ final class LocalPersistenceControllerTests: XCTestCase {
     }
 
     func test_initialState_isEmpty() throws {
-        XCTAssertEqual(try fetchAllMovies().count, 0)
+        XCTAssertEqual(try sut.fetchAllMovies().count, 0)
     }
 
     func test_addingOneMovie() throws {
-        try insert(.matrix)
-        XCTAssertEqual(try fetchAllMovies().count, 1)
+        try sut.persist([.matrix])
+        XCTAssertEqual(try sut.fetchAllMovies().count, 1)
     }
 
     func test_addingFourMovie() throws {
-        try insert(.alien, .fightclub, .matrix, .truman)
-        XCTAssertEqual(try fetchAllMovies().count, 4)
+        try sut.persist([.alien, .fightclub, .matrix, .truman])
+        XCTAssertEqual(try sut.fetchAllMovies().count, 4)
     }
 
     func test_saving() throws {
-        try insert(.alien, .fightclub, .matrix, .truman)
+        
+        try sut.persist([.alien, .fightclub, .matrix, .truman])
 
         expectation(
             forNotification: .NSManagedObjectContextDidSave,
@@ -74,18 +76,5 @@ extension LocalPersistenceControllerTests {
                 }
 
         return MovieDAO(entity: entity, insertInto: sut.context)
-    }
-
-    func insert(_ movies: Movie...) throws {
-        try movies.forEach { movie in
-            _ = try DAOMovieAdapter.dao(from: movie, in: sut.context)
-        }
-    }
-
-    func fetchAllMovies() throws -> [NSManagedObject] {
-        let entityName = String(describing: MovieDAO.self)
-        let fetchRequest = NSFetchRequest<NSManagedObject>(
-            entityName: entityName)
-        return try sut.context.fetch(fetchRequest)
     }
 }

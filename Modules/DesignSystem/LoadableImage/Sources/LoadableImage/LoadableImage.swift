@@ -35,7 +35,6 @@ public struct LoadableImage: View {
             } else if failedToLoad {
                 Rectangle()
                     .fill(Color.purple.opacity(0.1))
-                // TODO: Check why rectangle is not getting correct frame size unless specified here
             } else {
                 ProgressView()
             }
